@@ -18,3 +18,8 @@ This app was created to display the cryptocurrency status using the alphavantage
 1. Input validations. For the search, currency convertes and the list
 2. Tests. I would implement some tests to simulate the responses and inputs and as I have some response mocks that I used because of the API limit (25 requests) it would be easier.
 3. Layout. It's not my strenght draw the UI from skretch but maybe if I had more time I would think more about this.
+
+
+### Running
+1. npm install or yarn install
+2. npm run dev or yarn dev
