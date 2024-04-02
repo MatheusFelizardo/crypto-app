@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+
+#currency-list-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+#currency-list-container::-webkit-scrollbar-thumb {
+  /* tailwind indigo 500 */
+  background-color: #5a67d8;
+  min-height: 56px;
+  border-radius: 8px;
+}
+
+#currency-list-container::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+  border-radius: 8px;
+}
