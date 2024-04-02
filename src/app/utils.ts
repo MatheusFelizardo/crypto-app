@@ -1,8 +1,8 @@
 import { DAILY, EXCHANGE_RATE, MONTLY } from "./mocks"
 
-// const API_KEY = 'RIBXT3XYLI69PC0Q'
+const API_KEY = 'RIBXT3XYLI69PC0Q'
 // const API_KEY = 'WA4OMB8GE0SAMG8E'
-const API_KEY = 'I1QH66WFLNFMR3HG'
+// const API_KEY = 'I1QH66WFLNFMR3HG'
 
 export interface CurrencyInfo {
   date: string
