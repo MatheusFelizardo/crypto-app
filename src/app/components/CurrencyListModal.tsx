@@ -85,7 +85,7 @@ const CurrencyListModal = ({handleClose, isOpen, setAndSearch}: CurrencyListModa
           <button className='absolute right-5 top-5' onClick={closeModal}>
             <Image src='/icons/close.svg' alt='Close' width={20} height={20} />
           </button>
-          <div className='flex flex-col lg:flex-row justify-between w-[calc(100%-4rem)] px-2'>
+          <div className='flex flex-col md:flex-row justify-between w-[calc(100%-4rem)] px-2'>
             <h1 className=' mb-4 text-indigo-500'>Listing all availabe currencies </h1>
             <div className='relative h-full'>
               <label htmlFor='search' className='sr-only'>Search</label>
