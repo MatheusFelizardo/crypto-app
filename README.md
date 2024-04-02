@@ -1,5 +1,7 @@
 # Crypto app
 This app was created to display the cryptocurrency status using the alphavantage API.
+
+![](/public/crypto-app-gif.gif)
 Deploy: https://crypto-app-delta-six.vercel.app/
 
 ### Techs
@@ -24,3 +26,4 @@ Deploy: https://crypto-app-delta-six.vercel.app/
 ### Running
 1. npm install or yarn install
 2. npm run dev or yarn dev
+
