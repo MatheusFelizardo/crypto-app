@@ -13229,16 +13229,31 @@ export const MONTLY = [{
 }
 ]
 
-export const EXCHANGE_RATE = {
-    "Realtime Currency Exchange Rate": {
-      "1. From_Currency Code": "BTC",
-      "2. From_Currency Name": "Bitcoin",
-      "3. To_Currency Code": "CNY",
-      "4. To_Currency Name": "Chinese Yuan",
-      "5. Exchange Rate": "474884.20800000",
-      "6. Last Refreshed": "2024-04-02 12:02:04",
-      "7. Time Zone": "UTC",
-      "8. Bid Price": "474884.13564000",
-      "9. Ask Price": "474884.20800000"
-    }
-  }
+export const EXCHANGE_RATE = [
+    {
+        "Realtime Currency Exchange Rate": {
+          "1. From_Currency Code": "BTC",
+          "2. From_Currency Name": "Bitcoin",
+          "3. To_Currency Code": "CNY",
+          "4. To_Currency Name": "Chinese Yuan",
+          "5. Exchange Rate": "474884.20800000",
+          "6. Last Refreshed": "2024-04-02 12:02:04",
+          "7. Time Zone": "UTC",
+          "8. Bid Price": "474884.13564000",
+          "9. Ask Price": "474884.20800000"
+        }
+      },
+      {
+        "Realtime Currency Exchange Rate": {
+          "1. From_Currency Code": "ADA",
+          "2. From_Currency Name": "Cardano",
+          "3. To_Currency Code": "CNY",
+          "4. To_Currency Name": "Chinese Yuan",
+          "5. Exchange Rate": "2251.20800000",
+          "6. Last Refreshed": "2024-04-02 12:02:04",
+          "7. Time Zone": "UTC",
+          "8. Bid Price": "2251.13564000",
+          "9. Ask Price": "2251.20800000"
+        }
+      }
+]

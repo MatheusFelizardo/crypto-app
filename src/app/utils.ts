@@ -138,7 +138,7 @@ export const getCurrencyMonthly = async (symbol: string) => {
       }
       return formatApiData(response) as CurrencyData
     }
-   
+  
     return formatApiData(response) as CurrencyData
   } catch(e) {
     return {
@@ -204,7 +204,7 @@ export const getExchangeRate = async (from: string, to: string) => {
   try {
     const request = await fetch(`https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=${from}&to_currency=${to}&apikey=${API_KEY}`)
     const response = await request.json()
-    // const response = EXCHANGE_RATE
+   
     if (response['Error Message']) {
       return {
         error: response['Error Message'],

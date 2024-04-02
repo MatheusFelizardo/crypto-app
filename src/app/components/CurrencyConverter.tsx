@@ -10,53 +10,56 @@ function CurrencyConverter({selectedCurrency}: {selectedCurrency: string | undef
   const [amount, setAmount] = useState<string | number>('')
   const [result, setResult] = useState<string | number>('')
   const [error, setError] = useState('')
-  const [options, setOptions] = useState<any>({
-    from: '',
-    to: '',
-    rate: null,
-  })
 
+  const savedRate = [] as {from: string, to: string, rate: string | number}[]
   const allCurrencyOptions = [...physicalCurrency, ...digitalCurrency]
 
   useEffect(() => {
     if (!selectedCurrency) return
+    console.log(selectedCurrency)
     setFrom(selectedCurrency)
     setTo('USD')
+    setAmount('')
+    setResult('')
   }, [selectedCurrency])
   
   const convertCurrency = async (value: string) => {
     setError('')
+
     if (from === '' || to === '') {
       setResult(amount)
       return
     }
-    let rate
-    
-    if (options.from != from && options.to != to) {
-      const rateResponse = await getExchangeRate(from, to) as ExchangeRateResponse
-      if (rateResponse.error) {
-        const reverseRateResponse = await getExchangeRate(to, from) as ExchangeRateResponse
-        if (!reverseRateResponse.error) {
-          rate = 1 / +reverseRateResponse['Realtime Currency Exchange Rate']['5. Exchange Rate']
-          setOptions({
-            from,
-            to,
-            rate
-          })
-          return
-        }
-        setError(rateResponse.message)
+
+    savedRate.forEach((item) => {
+      if (item.from === from && item.to === to) {
+        setResult(+item.rate * Number(value))
         return
       }
-      rate = rateResponse['Realtime Currency Exchange Rate']['5. Exchange Rate']
-      setOptions({
-        from,
-        to,
-        rate
-      })
+    })
+
+    const rateResponse = await getExchangeRate(from, to) as ExchangeRateResponse
+    if (rateResponse.error) {
+      const reverseRateResponse = await getExchangeRate(to, from) as ExchangeRateResponse
+      if (!reverseRateResponse.error) {
+        const rate = 1 / +reverseRateResponse['Realtime Currency Exchange Rate']['5. Exchange Rate']
+        savedRate.push({
+          from,
+          to,
+          rate
+        })
+        return
+      }
+      setError(rateResponse.message)
+      return
     }
-    rate = options.rate
-  
+    const rate = rateResponse['Realtime Currency Exchange Rate']['5. Exchange Rate']
+    savedRate.push({
+      from,
+      to,
+      rate
+    })
+
     setResult(+rate * Number(value))
   }
 
